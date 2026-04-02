@@ -321,7 +321,7 @@ function formatStep(val){return val>=1000000?(val/1000000+'M'):(val>=1000?(val/1
 function updateUnitValue(idx){const s=document.getElementById('s'+idx);const uv=document.getElementById('uv'+idx);if(!s||!uv)return;const hz=Number(s.value);uv.textContent=formatDisplay(hz,unitModes[idx])+' '+unitLabel(unitModes[idx]);}
 function stepIndex(val){const idx=stepOptions.indexOf(val);return idx>=0?idx:3;}
 function updateStepUI(i){const rb=document.getElementById('r'+i);const rl=document.getElementById('rl'+i);if(rb)rb.value=stepIndex(steps[i]);if(rl)rl.textContent=t('stepLabel')+' '+formatStep(steps[i]);const fi=document.getElementById('f'+i);const sl=document.getElementById('s'+i);if(fi)fi.step=steps[i];if(sl)sl.step=steps[i];if(sl){const hz=snapHz(Number(sl.value),i);sl.value=hz;if(fi)fi.value=formatDisplay(hz,unitModes[i]);}updateFineRange(i);}
-function updateFineRange(i){const sl=document.getElementById('s'+i);if(!sl)return;if(fineTune[i]){const base=fineBase[i]||Number(sl.value);const step=steps[i];const maxHz=Math.min(MAX_HZ,base+step*100);sl.min=base;sl.max=maxHz;}else{sl.min=MIN_HZ;sl.max=MAX_HZ;}}
+function updateFineRange(i){const sl=document.getElementById('s'+i);if(!sl)return;const fi=document.getElementById('f'+i);if(fineTune[i]){const base=fineBase[i]||Number(sl.value);const step=steps[i];const maxHz=Math.min(MAX_HZ,base+step*100);sl.value=base;sl.min=base;sl.max=maxHz;if(fi)fi.value=formatDisplay(base,unitModes[i]);}else{sl.min=MIN_HZ;sl.max=MAX_HZ;}}
 function mkChannel(idx,ch){return '<div class="card">'+
   '<div class="card-body">'+
     '<div class="title-row"><h3>'+t('ch')+' '+idx+'</h3><button type="button" class="title-unit" id="ut'+idx+'">'+unitLabel(unitModes[idx])+'</button></div>'+
