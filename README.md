@@ -11,7 +11,8 @@ Ein einfacher Web-basierter Signalgenerator auf einem ESP32-C3 (Lolin SuperMini)
 - Drei Kanäle (CLK0–CLK2) des Si5351
 - Frequenzbereich (praktisch nutzbar) ca. 10 kHz bis 160 MHz
 - Web-UI mit Direktanwendung der Einstellungen
-- Discrete 7-Schritt-Auflösung für Frequenzänderung (1, 10, 100, 1k, 10k, 100k, 1M Hz)
+- Diskrete 7-Schritt-Auflösung für Frequenzänderung (1, 10, 100, 1k, 10k, 100k, 1M Hz)
+- Fine-Tune-Modus (Taste T) – begrenzt den Frequenzschieberegler auf ±100 Schritte um die aktuelle Frequenz
 - Phasen-Offset in Grad (0–360, intern 0–127 Schritte)
 - Korrektur in ppm für den Quarz
 - Sync-Modus (alle Kanäle folgen Kanal 0)
@@ -66,6 +67,7 @@ AP: SI5351-AP  IP: 192.168.0.10
 - Робочий діапазон ~10 кГц … 160 МГц
 - Веб-UI з миттєвим застосуванням змін
 - Дискретний 7-кроковий крок частоти (1, 10, 100, 1k, 10k, 100k, 1M Гц)
+- Режим точного підстроювання (кнопка T) – обмежує слайдер частоти діапазоном ±100 кроків від поточної частоти
 - Фазовий зсув у градусах (0–360, всередині 0–127 кроків)
 - Корекція кварцу в ppm
 - Режим синхронізації (усі канали слідують за каналом 0)
@@ -120,6 +122,7 @@ A simple web-based signal generator on ESP32-C3 (Lolin SuperMini) with the Si535
 - Practical range ~10 kHz … 160 MHz
 - Web UI with immediate application of settings
 - Discrete 7-step frequency increments (1, 10, 100, 1k, 10k, 100k, 1M Hz)
+- Fine Tune mode (T button) – limits frequency slider to ±100 steps around current frequency
 - Phase offset in degrees (0–360, internally 0–127 steps)
 - Crystal correction in ppm
 - Sync mode (all channels follow channel 0)
@@ -174,6 +177,7 @@ AP: SI5351-AP  IP: 192.168.0.10
 - Рабочий диапазон ~10 кГц … 160 МГц
 - Веб-UI с мгновенным применением настроек
 - Дискретный 7-ступенчатый шаг частоты (1, 10, 100, 1k, 10k, 100k, 1M Гц)
+- Режим точной подстройки (кнопка T) – ограничивает слайдер частоты диапазоном ±100 шагов от текущей частоты
 - Фазовый сдвиг в градусах (0–360, внутри 0–127 шагов)
 - Коррекция кварца в ppm
 - Режим синхронизации (все каналы следуют частоте канала 0)
